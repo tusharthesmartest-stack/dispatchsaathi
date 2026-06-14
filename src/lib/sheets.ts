@@ -1,7 +1,7 @@
 import { google, sheets_v4 } from 'googleapis';
 import { StockRow } from '@/types';
 
-const SHEET_ID = '1xKeYEowtmjOEy8azS9irhGPVGJ7Ga4YNvBZG0mO0FKk';
+const SHEET_ID = '1v-07quAAMe4pnkCqfOVfXuwUQPiI3wA5t5wUeGVCRKc';
 
 let cachedClient: sheets_v4.Sheets | null = null;
 
@@ -26,7 +26,7 @@ export async function readStockMaster(): Promise<StockRow[]> {
   const sheets = getClient();
   const res = await sheets.spreadsheets.values.get({
   spreadsheetId: SHEET_ID,
-  range: 'STOCK_MASTER!A2:M',
+  range: 'Safex_STOCK_MASTER!A2:M',
 });
 
 const rows = res.data.values || [];
